@@ -43,7 +43,8 @@ const LoginForm = () => {
   };
   return (
     <>
-      <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+    Hello! This is the Login Page
+      {/* <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
         <Alert
           dismissible
           onClose={() => setShowAlert(false)}
@@ -87,7 +88,7 @@ const LoginForm = () => {
         >
           Submit
         </Button>
-      </Form>
+      </Form> */}
     </>
   );
 };
