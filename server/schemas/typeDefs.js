@@ -1,38 +1,37 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
-  type Category {
+   type User {
     _id: ID
-    name: String
-  }
-
-  type Product {
-    _id: ID
-    name: String
-    description: String
-    image: String
-    quantity: Int
-    price: Float
-    category: Category
-  }
-
-  type Order {
-    _id: ID
-    purchaseDate: String
-    products: [Product]
-  }
-
-  type User {
-    _id: ID
-    firstName: String
-    lastName: String
+    username: String
     email: String
-    orders: [Order]
+    bookCount: Int
+    savedPosts: [Post]
   }
+  type Post{
+   username: String
+   instrument: String
+   description: String
+   genre: String
+   image: String
+   title: String
+   comment: [Comment]
+  }
+  type Comment {
+   username: String
+   comment: String
+   
+  }
+  input PostInput {
+   username: String
+   instrument: String
+   description: String
+   genre: String
+   image: String
+   title: String
+   comment: [Comment]
 
-  type Checkout {
-    session: ID
-  }
+}
 
   type Auth {
     token: ID
@@ -40,19 +39,16 @@ const typeDefs = gql`
   }
 
   type Query {
-    categories: [Category]
-    products(category: ID, name: String): [Product]
-    product(_id: ID!): Product
-    user: User
-    order(_id: ID!): Order
-    checkout(products: [ID]!): Checkout
+    post: [Post]
+    allPosts (username:String!, instrument: String!, description:String!, genre: String!,image:String!, title: String!)
+    user:User
+    
   }
 
   type Mutation {
-    addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
-    addOrder(products: [ID]!): Order
-    updateUser(firstName: String, lastName: String, email: String, password: String): User
-    updateProduct(_id: ID!, quantity: Int!): Product
+    addUser(username: String!, email: String!, password: String!): Auth
+    addPost(username:String!, instrument: String!, description:String!, genre: String!,image:String!, title: String!)
+    savedPosts(postData: PostInput!): Comment
     login(email: String!, password: String!): Auth
   }
 `;
