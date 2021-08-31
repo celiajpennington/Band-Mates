@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import NavTabsDaDashboard from './NavTabsDashboard';
-import Home from './pages/Home';
+//added Page to Home import
+import Home from './HomePage';
 import ViewAllPosts from './pages/ViewAllPosts';
 import ViewMyPosts from './pages/ViewAllPosts';
 import Dashboard from './pages/Dashboard';
@@ -27,7 +28,7 @@ export default function DashboardContainer() {
     if (currentPage === 'LogOut') {
       return <Home />;
     }
-
+  }
   const handlePageChange = (page) => setCurrentPage(page);
 
   return (
@@ -38,4 +39,4 @@ export default function DashboardContainer() {
       {renderPage()}
     </div>
   );
-}}
+}
