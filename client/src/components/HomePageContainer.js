@@ -19,6 +19,9 @@ export default function HomeContainer() {
     if (currentPage === 'SignUp') {
       return <SignUp />;
     }
+    // //default page
+    // return <Homepage/>;
+  }
 
   const handlePageChange = (page) => setCurrentPage(page);
 
@@ -30,4 +33,4 @@ export default function HomeContainer() {
       {renderPage()}
     </div>
   );
-}}
+};
