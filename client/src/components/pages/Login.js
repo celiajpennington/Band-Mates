@@ -43,7 +43,6 @@ const LoginForm = () => {
   };
   return (
     <>
-    Hello! This is the Login Page
       {/* <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
         <Alert
           dismissible
