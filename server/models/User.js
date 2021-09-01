@@ -22,9 +22,13 @@ const userSchema = new Schema(
       required: true,
     },
     // set savedBooks to be an array of data that adheres to the postSchema
-    savedPosts: [postSchema],
-  },
   
+    post: [{
+      type: Schema.Types.ObjectId,
+      ref: 'Post',
+    }],
+  },
+
   // set this to use virtual below
   {
     toJSON: {

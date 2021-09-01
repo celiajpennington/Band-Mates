@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import NavTabsHome from './NavTabsHome';
 import HomePage from './HomePage';
-import SignUp from './pages/SignUp';
-import LogIn from './pages/LogIn';
+import Signup from './pages/Signup';
+import Login from './pages/Login';
 
 
 export default function HomeContainer() {
@@ -13,11 +13,11 @@ export default function HomeContainer() {
     if (currentPage === 'HomePage') {
       return <HomePage />;
     }
-    if (currentPage === 'LogIn') {
-      return <LogIn />;
+    if (currentPage === 'Login') {
+      return <Login />;
     }
-    if (currentPage === 'SignUp') {
-      return <SignUp />;
+    if (currentPage === 'Signup') {
+      return <Signup />;
     }
     // //default page
     // return <Homepage/>;

@@ -3,7 +3,7 @@ import { Form, Button, Alert } from 'react-bootstrap';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../../utils/mutations';
 import Auth from '../../utils/auth';
-const LoginForm = () => {
+const Login = () => {
   const [userFormData, setUserFormData] = useState({ email: '', password: '' });
   const [validated] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
@@ -44,7 +44,7 @@ const LoginForm = () => {
   return (
     <>
     Hello! This is the Login Page
-      {/* <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+       <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
         <Alert
           dismissible
           onClose={() => setShowAlert(false)}
@@ -88,11 +88,11 @@ const LoginForm = () => {
         >
           Submit
         </Button>
-      </Form> */}
+      </Form> 
     </>
   );
 };
-export default LoginForm;
+export default Login;
 
 
 // // see SignupForm.js for comments
