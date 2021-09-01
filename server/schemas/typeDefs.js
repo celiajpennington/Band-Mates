@@ -5,32 +5,33 @@ const typeDefs = gql`
     _id: ID
     username: String
     email: String
-    bookCount: Int
-    savedPosts: [Post]
+    posts: [Post]
   }
   type Post{
+   _id: ID
    username: String
    instrument: String
    description: String
    genre: String
    image: String
-   title: String
-   comment: [Comment]
+   title: String 
+
   }
   type Comment {
+   _id: ID
    username: String
    comment: String
    
   }
   input PostInput {
+    _id: ID
    username: String
    instrument: String
    description: String
    genre: String
    image: String
    title: String
-   comment: [Comment]
-
+  
 }
 
   type Auth {
@@ -39,16 +40,14 @@ const typeDefs = gql`
   }
 
   type Query {
-    post: [Post]
-    allPosts: (username:String!, instrument: String!, description:String!, genre: String!,image:String!, title: String!)
-    user:User
+    allPosts:[Post]
+    users:[User]
     
   }
 
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
-    addPost(username:String!, instrument: String!, description:String!, genre: String!,image:String!, title: String!)
-    savedPosts(postData: PostInput!): Comment
+    addPost(postInput: PostInput! ):Post
     login(email: String!, password: String!): Auth
   }
 `;
