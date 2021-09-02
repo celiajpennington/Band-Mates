@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Menu } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
+import Authservice from '../utils/auth';
 
 function NavTabsDashboard(props) {
   console.log('NAV HOME!!!')
@@ -19,6 +20,14 @@ function NavTabsDashboard(props) {
     return (
       <div>
         <Menu pointing secondary>
+        <Menu.Item className="login" style ={{color:"#fdd05a", fontSize:"30px", textShadow:"-1px 1px 2px #000", fontFamily:"sans-serif" }}
+            name='logout'
+            active={activeItem === 'logout'}
+            onClick={Authservice.logout}
+            as={ Link }
+            to="/"
+
+          />
           <Menu.Item
             name='Dashboard'
             active={activeItem === 'dashboard'}

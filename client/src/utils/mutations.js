@@ -53,21 +53,3 @@ export const ADD_POST = gql`
   `;
 
 
-// export const REMOVE_BOOK = gql`
-//   mutation removeBook($bookId: ID!) {
-//     removeBook(bookId: $bookId) {
-//       _id
-//        username
-//             email
-//             bookCount
-//             savedBooks{
-//                 bookId
-//                 title
-//                 authors
-//                 description
-//                 image
-//                 link
-//             }
-//     }
-//   }
-// `;
