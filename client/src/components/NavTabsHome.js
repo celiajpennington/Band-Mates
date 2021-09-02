@@ -12,9 +12,9 @@ function NavTabsHome() {
   const handleItemClick = (e, { name }) => setActiveItem(name);
 
     return (
-      <div className="nav-bar-home">
+      <div className="nav-bar-home" style={{borderBottomStyle:"outset"}}>
         <Menu pointing secondary>
-          <Menu.Item
+          <Menu.Item className="home" style ={{color:"#fdd05a", fontSize:"30px", textShadow:"-1px 1px 2px #000", fontFamily:"sans-serif"}}
             name='home'
             active={activeItem === 'home'}
             onClick={handleItemClick}
@@ -22,14 +22,14 @@ function NavTabsHome() {
             to="/"
           />
           <Menu.Menu position='right'>
-          <Menu.Item
+          <Menu.Item className="login" style ={{color:"#fdd05a", fontSize:"30px", textShadow:"-1px 1px 2px #000", fontFamily:"sans-serif" }}
             name='login'
             active={activeItem === 'login'}
             onClick={handleItemClick}
             as={ Link }
             to="/login"
           />
-          <Menu.Item
+          <Menu.Item className="signup" style ={{color:"#fdd05a", fontSize:"30px", textShadow:"-1px 1px 2px #000", fontFamily:"sans-serif"}}
             name='signup'
             active={activeItem === 'signup'}
             onClick={handleItemClick}
