@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import './style/NavTabsHome.css';
 
 function NavTabsHome() {
+  console.log('NAV TABS!!!!!!!')
   const [activeItem, setActiveItem] = useState('home');
   const pathname = window.location.pathname;
   const path = pathname === "/" ? 'home' : pathname.substr(1);
