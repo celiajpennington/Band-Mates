@@ -24,9 +24,19 @@ const resolvers = {
       addPost: async (parent, { postInput }, context) => {
         console.log(context);
         if (context.user) {
+           
+          { postInput: PostInput }
+
           const post = new Post({ postInput });
 
-          await Post.findByIdAndUpdate(context.user._id, { $push: { postInput: PostInput } });
+          await Post.findByIdAndUpdate({_id: context.user._id}, { $push: { postInput: PostInput } });
+
+          //{ postInput: PostInput }
+          // addUser: async (parent, args) => {
+          //   const user = await User.create(args);
+          //   const token = signToken(user);
+          //   return { token, user };
+          // }
 
           return post;
         }
