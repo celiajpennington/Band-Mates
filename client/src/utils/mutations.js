@@ -37,6 +37,7 @@ export const ADD_POST = gql`
         _id
             username
             email
+            
             post{
 
            

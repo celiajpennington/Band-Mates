@@ -18,9 +18,9 @@ function NavTabsDashboard(props) {
   }
 
     return (
-      <div>
+      <div style ={{backgroundColor:"#1c2529"}}>
         <Menu pointing secondary>
-        <Menu.Item className="login" style ={{color:"#fdd05a", fontSize:"30px", textShadow:"-1px 1px 2px #000", fontFamily:"sans-serif" }}
+        <Menu.Item className="login" style ={{color:"#fdd05a", fontSize:"2vw", textShadow:"-1px 1px 2px #000", fontFamily:"sans-serif" }}
             name='logout'
             active={activeItem === 'logout'}
             onClick={Authservice.logout}
@@ -28,7 +28,7 @@ function NavTabsDashboard(props) {
             to="/"
 
           />
-          <Menu.Item
+          <Menu.Item style ={{color:"#fdd05a", fontSize:"2vw", textShadow:"-1px 1px 2px #000", fontFamily:"sans-serif"}}
             name='Dashboard'
             active={activeItem === 'dashboard'}
             onClick={handleItemClick}
@@ -36,21 +36,21 @@ function NavTabsDashboard(props) {
             to="/dashboard"
           />
           <Menu.Menu position='right'>
-          <Menu.Item
+          <Menu.Item style ={{color:"#fdd05a", fontSize:"2vw", textShadow:"-1px 1px 2px #000", fontFamily:"sans-serif"}}
             name='View All Posts'
             active={activeItem === 'viewallposts'}
             onClick={handleItemClick}
             as={ Link }
             to="/viewallposts"
           />
-          <Menu.Item
+          <Menu.Item style ={{color:"#fdd05a", fontSize:"2vw", textShadow:"-1px 1px 2px #000", fontFamily:"sans-serif"}}
             name='View My Posts'
             active={activeItem === 'viewmyposts'}
             onClick={handleItemClick}
             as={ Link }
             to="/viewmyposts"
           />
-          <Menu.Item
+          <Menu.Item style ={{color:"#fdd05a", fontSize:"2vw", textShadow:"-1px 1px 2px #000", fontFamily:"sans-serif"}}
             name='Create Post'
             active={activeItem === 'createpost'}
             onClick={handleItemClick}
