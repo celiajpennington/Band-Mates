@@ -1,8 +1,7 @@
-import React from "react";
+import React, { useState, useEffect} from "react";
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
-
+import Authservice from './utils/auth';
 import 'semantic-ui-css/semantic.min.css'
-// import '/App.css';
 import NavTabsHome from "./components/NavTabsHome";
 import Home from '../src/components/pages/Home';
 import Login from '../src/components/pages/Login';
@@ -39,29 +38,26 @@ import {
   });
 
 function App() {
-
+const [loggedIn, setLoggedIn] = useState(false)
+useEffect(() =>{
+let isLoggedIn = Authservice.loggedIn()
+setLoggedIn(isLoggedIn)
+},[])
 
     // do graphQL Query me to see if u r logged in rn 
-    var loggedIn = false
+    // var loggedIn = false
 
     return (
         <ApolloProvider client= { client }>
+       
         <Router>
-
+        {loggedIn ? (<NavTabsDashboard />) : (<NavTabsHome />)}
           
-            {/* <Switch>
-                <NavTabsHome/>
-                <Route exact path='/' component={ Home }/>
-                <Route exact path='/login' component={ Login }/>
-                <Route exact path='/signup' component={ Signup }/>
-            </Switch> 
-            */}
-
-            {/* <Switch> */}
-
-                {loggedIn ? (<NavTabsDashboard />) : (<NavTabsHome />)}
-                <Redirect exact path={["/", "/login"]} to="/dashboard" />
-                <Redirect exact path={["/", "/signup"]} to="/dashboard" />
+          
+               <Switch>
+              
+                {/* <Redirect exact path={["/", "/login"]} to="/dashboard" />
+                <Redirect exact path={["/", "/signup"]} to="/dashboard" /> */}
                 <Route exact path='/' component={Home} />
                 <Route exact path='/dashboard' component={Dashboard} />
                 <Route exact path='/viewallposts' component={ViewAllPosts} />
@@ -70,12 +66,13 @@ function App() {
                 <Route exact path='/login' component={Login} />
                 <Route exact path='/signup' component={Signup} />
 
-            {/* </Switch> */}
+           
          
         
             
-    
+                </Switch>
         </Router>
+      
         </ApolloProvider>
     )
 }
