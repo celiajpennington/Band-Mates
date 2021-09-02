@@ -7,7 +7,8 @@ mutation login($email: String!, $password: String!) {
     token
     user {
       _id
-      username
+    username
+    
     }
   }
 }
@@ -21,6 +22,7 @@ export const ADD_USER = gql`
         _id
         username
         email
+       
       }
     }
   }
@@ -31,6 +33,13 @@ export const ADD_POST = gql`
   mutation addPost($postInput: PostInput! ) {
   addPost(postInput: $postInput)
        {
+
+        _id
+            username
+            email
+            post{
+
+           
               _id
              username
               instrument
@@ -39,7 +48,8 @@ export const ADD_POST = gql`
                 image
                 title
            }
-      }
+      
+          } }
   `;
 
 

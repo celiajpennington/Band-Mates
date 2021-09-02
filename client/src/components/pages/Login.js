@@ -1,43 +1,80 @@
-import React, {useState} from 'react';
-//var score = 0
-//var wins = 0
+import React, { useState } from 'react';
+import { Button, Form } from 'semantic-ui-react'
+import { useMutation } from '@apollo/client'
+import { LOGIN_USER } from '../../utils/mutations'
+import Auth from '../../utils/auth';
+import '../style/login.css';
+function Login(props) {
+  const [userFormData, setUserFormData] = useState({ email: '', password: '' });
+    const [login, { loading }] = useMutation(LOGIN_USER, {
+    update(_, result) {
+      console.log(result)
+     props.history.push('/dashboard')
+    },
+    variable: { ...userFormData }
 
-function Login() {
-
-  const [state, setState] = useState({
-    email: '',
-    password: '',
   });
+  
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setUserFormData({ ...userFormData, [name]: value });
+  };
 
- 
-  console.log('Login State!!!', state)
+  const handleFormSubmit = async (event) => {
+    event.preventDefault(); 
+   
+    // check if form has everything (as per react-bootstrap docs)
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
 
-  const handleEmail = (event) => {
-    // console.log('we are typing!!!', event.target.value)
-    setState({...state, email: event.target.value})
-  }
+    try {
+      const { data } = await login({
+        variables: { ...userFormData },
+      });
+      console.log('data!! from mutation attempt', data)
+      //console.log('err', error)
+      Auth.login(data.login.token);
+    } catch (err) {
+      console.log('WE HAVE ERRR from mutation thing', err)
+     console.error(err);
+      //setShowAlert(true);
+    }
 
-  const handlePassword = (event) => {
-    // console.log('we are typing!!!', event.target.value)
-    setState({...state, password: event.target.value})
-  }
-  const handleLoginBtn = (event) => {
-    // console.log('we are typing!!!', event.target.value)
-    console.log('Go logged in with this info!', state)
-
-    // go to Graphql mutatino stuff!!
-  }
-
+    setUserFormData({
+      email: '',
+      password: '',
+    });
+  };
   return (
-    <div>
-      <h1>
-        Login Page
-      </h1>
-      <p>email</p>
-      <input onChange={handleEmail} ></input>
-      <p>password</p>
-      <input onChange={handlePassword} ></input>
-      <button onClick={handleLoginBtn}>Login!</button>
+    <div className="form-container">
+      <Form onSubmit={handleFormSubmit} noValidate noValidate className={loading ? 'loading' : ''} >
+        <h1>Login</h1>
+       <Form.Input
+          label="Email"
+          placholder="Your email address.."
+          name="email"
+          type="email"
+          value={userFormData.email}
+          onChange={handleInputChange}
+        />
+        <Form.Input
+          label="Password"
+          placholder="Your password.."
+          name="password"
+          type="password"
+          value={userFormData.password}
+          onChange={handleInputChange}
+        />
+        <Button 
+          disabled={!(userFormData.email && userFormData.password)}
+          type='submit' primary
+          variant='success'>
+          Submit
+        </Button>
+      </Form>
     </div>
   )
 }

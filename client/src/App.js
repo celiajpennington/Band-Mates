@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
 import 'semantic-ui-css/semantic.min.css'
 // import '/App.css';
@@ -59,15 +59,17 @@ function App() {
 
             {/* <Switch> */}
 
-            {loggedIn ? (<NavTabsDashboard />) : (<NavTabsHome />)}
-            <Route exact path='/' component={Home} />
-            <Route exact path='/dashboard' component={ Dashboard }/>
-            <Route exact path='/viewallposts' component={ ViewAllPosts }/>
-            <Route exact path='/viewmyposts' component={ ViewMyPosts }/>
-            <Route exact path='/createpost' component={ CreatePost }/>   
-            <Route exact path='/login' component={ Login }/>
-            <Route exact path='/signup' component={ Signup }/> 
-        
+                {loggedIn ? (<NavTabsDashboard />) : (<NavTabsHome />)}
+                <Redirect exact path={["/", "/login"]} to="/dashboard" />
+                <Redirect exact path={["/", "/signup"]} to="/dashboard" />
+                <Route exact path='/' component={Home} />
+                <Route exact path='/dashboard' component={Dashboard} />
+                <Route exact path='/viewallposts' component={ViewAllPosts} />
+                <Route exact path='/viewmyposts' component={ViewMyPosts} />
+                <Route exact path='/createpost' component={CreatePost} />
+                <Route exact path='/login' component={Login} />
+                <Route exact path='/signup' component={Signup} />
+
             {/* </Switch> */}
          
         
