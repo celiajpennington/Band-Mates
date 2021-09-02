@@ -23,9 +23,9 @@ const userSchema = new Schema(
     },
     // set savedBooks to be an array of data that adheres to the postSchema
   
-    post: [{
+    user: [{
       type: Schema.Types.ObjectId,
-      ref: 'Post',
+      ref: 'User',
     }],
   },
 
