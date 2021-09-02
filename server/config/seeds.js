@@ -44,7 +44,7 @@ db.once('open', async () => {
     {
       username: 'CourtneyLove',
       comment: "I can learn sitar!",
-    },  
+    },
     {
       username: 'GeorgeHarrison',
       comment: "Cant help you mate, but I can give my buddy Ringo a call!",
@@ -52,23 +52,4 @@ db.once('open', async () => {
   ]);
 
   console.log('comments seeded');
-
-  await User.deleteMany();
-  await User.create({
-    username: 'KurtCobain',
-    email: 'kurdt@testmail.com',
-    password: 'password12345',
-  });
-  await User.create({
-    username: 'CourtneyLove',
-    email: 'CourtneyLove@testmail.com',
-    password: 'password12345',
-  });
-  await User.create({
-    username: 'GeorgeHarrison',
-    email: 'GeorgeHarrison@testmail.com',
-    password: 'password12345',
-  });
-  console.log('users seeded');
-  process.exit();
 });
