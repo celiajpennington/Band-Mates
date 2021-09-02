@@ -22,6 +22,7 @@ function App() {
 
     return (
         <Router>
+
             {/*
             <Switch>
                 <NavTabsHome/>
@@ -43,6 +44,10 @@ function App() {
             <Route exact path='/signup' component={ Signup }/> 
         
             {/* </Switch> */}
+         
+          
+            
+
         </Router>
     )
 }

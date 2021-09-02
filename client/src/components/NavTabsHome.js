@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Menu } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
+import './style/NavTabsHome.css';
 
 function NavTabsHome() {
   console.log('NAV TABS!!!!!!!')
@@ -11,7 +12,7 @@ function NavTabsHome() {
   const handleItemClick = (e, { name }) => setActiveItem(name);
 
     return (
-      <div>
+      <div className="nav-bar-home">
         <Menu pointing secondary>
           <Menu.Item
             name='home'
