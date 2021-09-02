@@ -8,11 +8,11 @@ const postSchema = new Schema({
       type: String,
     },
   ],
-  instrument: {
+  title: {
     type: String,
     required: true,
   },
-  description: {
+  instrument: {
     type: String,
     required: true,
   },
@@ -20,22 +20,23 @@ const postSchema = new Schema({
     type: String,
     required: true,
   },
-  image: {
-    type: String,
-  },
-    title: {
+  description: {
     type: String,
     required: true,
   },
+  image: {
+    type: String,
+  },
+    
   // comment: [{
   //   type: Schema.Types.ObjectId,
   //   ref: 'Comment',
   //   required: true
   // }],
-  user_id: 
+  post_id: 
     {
       type: Schema.Types.ObjectId,
-      ref: 'User'
+      ref: 'Post'
     }
   
   
