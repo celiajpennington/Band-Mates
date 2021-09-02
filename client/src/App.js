@@ -23,8 +23,8 @@ function App() {
     return (
         <Router>
 
-            {/*
-            <Switch>
+          
+            {/* <Switch>
                 <NavTabsHome/>
                 <Route exact path='/' component={ Home }/>
                 <Route exact path='/login' component={ Login }/>
@@ -35,7 +35,7 @@ function App() {
             {/* <Switch> */}
 
             {loggedIn ? (<NavTabsDashboard />) : (<NavTabsHome />)}
-            
+            <Route exact path='/' component={Home} />
             <Route exact path='/dashboard' component={ Dashboard }/>
             <Route exact path='/viewallposts' component={ ViewAllPosts }/>
             <Route exact path='/viewmyposts' component={ ViewMyPosts }/>
