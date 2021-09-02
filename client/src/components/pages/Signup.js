@@ -56,14 +56,14 @@ function Signup(props) {
   };
   return (
     <div className="form-container">
-      <Form onSubmit={handleFormSubmit} noValidate className={loading ? 'loading' : ''}>
+      <Form onSubmit={(e) => {handleFormSubmit(e)}} className={loading ? 'loading' : 'classless'}>
         <h1>Sign Up</h1>
         <Form.Input
           label="Username"
           placholder="Your username.."
           name="username"
           type="username"
-          error={errors.username ? true : false}
+          // error={errors.username ? true : false}
           value={userFormData.username}
           onChange={handleInputChange}
         />
@@ -72,7 +72,7 @@ function Signup(props) {
           placholder="Your email address.."
           name="email"
           type="email"
-          error={errors.email ? true : false}
+          // error={errors.email ? true : false}
           value={userFormData.email}
           onChange={handleInputChange}
         />
@@ -81,7 +81,7 @@ function Signup(props) {
           placholder="Your password.."
           name="password"
           type="password"
-          error={errors.password ? true : false}
+          // error={errors.password ? true : false}
           value={userFormData.password}
           onChange={handleInputChange}
         />
