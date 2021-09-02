@@ -33,6 +33,19 @@ const resolvers = {
 
         throw new AuthenticationError('Not logged in');
       },
+
+      addComment: async (parent, { postInput }, context) => {
+        console.log(context);
+        if (context.user) {
+          const comment = new Post({ postInput });
+
+          await Post.findByIdAndUpdate(context.user._id, { $push: { postInput: PostInput } });
+
+          return post;
+        }
+
+        throw new AuthenticationError('Not logged in');
+      },
       
       login: async (parent, { email, password }) => {
         const user = await User.findOne({ email });
