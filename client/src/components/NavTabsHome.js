@@ -3,6 +3,7 @@ import { Menu } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 
 function NavTabsHome() {
+  console.log('NAV TABS!!!!!!!')
   const [activeItem, setActiveItem] = useState('home');
   const pathname = window.location.pathname;
   const path = pathname === "/" ? 'home' : pathname.substr(1);
