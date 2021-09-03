@@ -7,7 +7,6 @@ import '../style/CreatePost.css';
 
 function CreatePost() {
   const [formState, setFormState] = useState({
-      username: '',
       instrument: '',
       genre: '',
       title: '',
@@ -19,13 +18,16 @@ function CreatePost() {
     const handleFormSubmit = async (event) => {
       event.preventDefault();
 
+
       // On form submit, perform mutation and pass in form data object as arguments
       // It is important that the object fields are match the defined parameters in `ADD_THOUGHT` mutation
       try {
         const { data } = addPost({
           variables: { ...formState },
-        });
 
+          
+        });
+console.log(data);
         window.location.reload();
       } catch (err) {
         console.error(err);
@@ -48,13 +50,13 @@ function CreatePost() {
       <Form onSubmit={handleFormSubmit} noValidate className={loading ? 'loading' : ''}>
         <Form.Field>
           <h1>Create a Post:</h1>
-          <Form.Input
+          {/* <Form.Input
             label="Username"
             placholder="Username.."
             name="username"
             value={formState.username}
             onChange={handleChange}
-          />
+          /> */}
           <Form.Input
             label="Instrument"
             placholder="Instrument.."

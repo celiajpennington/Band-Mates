@@ -1,5 +1,6 @@
-import React from 'react';
-import { useSpring, animated } from 'react-spring';
+// import React from 'react';
+// import { useSpring, animated } from 'react-spring';
+
 
 
 function About() {
@@ -15,3 +16,4 @@ function About() {
     return <animated.div style={styles}>ABOUT</animated.div>
   }
   export default About;
+
