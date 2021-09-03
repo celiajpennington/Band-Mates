@@ -41,9 +41,9 @@ const typeDefs = gql`
   }
 
   type Query {
-    allPosts:[Post]
+   
     users:[User]
-    
+    posts:[Post]
   }
 
   type Mutation {

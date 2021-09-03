@@ -20,14 +20,7 @@ function NavTabsDashboard(props) {
     return (
       <div style ={{backgroundColor:"#1c2529"}}>
         <Menu pointing secondary>
-        <Menu.Item className="login" style ={{color:"#fdd05a", fontSize:"2vw", textShadow:"-1px 1px 2px #000", fontFamily:"sans-serif" }}
-            name='logout'
-            active={activeItem === 'logout'}
-            onClick={Authservice.logout}
-            as={ Link }
-            to="/"
-
-          />
+        
           <Menu.Item style ={{color:"#fdd05a", fontSize:"2vw", textShadow:"-1px 1px 2px #000", fontFamily:"sans-serif"}}
             name='Dashboard'
             active={activeItem === 'dashboard'}
@@ -56,7 +49,15 @@ function NavTabsDashboard(props) {
             onClick={handleItemClick}
             as={ Link }
             to="/createpost"
-          />
+            />
+            <Menu.Item className="login" style={{ color: "#fdd05a", fontSize: "2vw", textShadow: "-1px 1px 2px #000", fontFamily: "sans-serif" }}
+              name='logout'
+              active={activeItem === 'logout'}
+              onClick={Authservice.logout}
+              as={Link}
+              to="/"
+
+            />
           </Menu.Menu>
         </Menu>
       </div>

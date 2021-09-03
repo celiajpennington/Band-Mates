@@ -4,12 +4,15 @@ const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
-    allPosts: async () => {
-      return await Post.find();
+    // getPosts: async () => {
+    //   return await Post.find();
+    // },
+    posts: async () => {
+      return Post.find({});
     },
-   
-    users: async () => {
-      return await User.find().select('-__v -password').populate('post');
+
+      users: async () => {
+      return await User.find().select('-__v -password').populate('posts');
     }
   },
 
