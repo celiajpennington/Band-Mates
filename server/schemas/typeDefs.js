@@ -9,7 +9,6 @@ const typeDefs = gql`
   }
   type Post{
    _id: ID
-   username: String
    instrument: String
    description: String
    genre: String
@@ -24,16 +23,7 @@ const typeDefs = gql`
    
   }
 
-  input PostInput {
-    _id: ID
-   username: String
-   instrument: String
-   description: String
-   genre: String
-   image: String
-   title: String
   
-}
 
   type Auth {
     token: ID
@@ -48,7 +38,7 @@ const typeDefs = gql`
 
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
-    addPost(postInput: PostInput!):Post
+    addPost(instrument: String!, description:String!, genre: String! title: String! ):Post
     login(email: String!, password: String!): Auth
   }
 `;

@@ -25,7 +25,7 @@ function ViewAllPosts() {
           /> 
          <Card.Header>Title: {val.title}</Card.Header>
           <Card.Description>
-           Instrumrnt: {val.instrument}
+           Instrument: {val.instrument}
             </Card.Description>
             <Card.Description>
               Genre: {val.genre}
