@@ -3,8 +3,11 @@ import { useMutation } from '@apollo/client';
 import { Form, Button } from 'semantic-ui-react'
 import { ADD_POST } from '../../utils/mutations'
 import '../style/CreatePost.css';
+
+
 function CreatePost() {
   const [formState, setFormState] = useState({
+
     instrument: '',
     genre: '',
     title: '',
@@ -33,12 +36,24 @@ function CreatePost() {
       setFormState({ ...formState, [name]: value });
     }
   };
+
   return (
     <div className="form-container">
       <Form onSubmit={handleFormSubmit} noValidate className={loading ? 'loading' : ''}>
         <Form.Field>
           <h1>Create a Post:</h1>
+
            <Form.Input
+
+          {/* <Form.Input
+            label="Username"
+            placholder="Username.."
+            name="username"
+            value={formState.username}
+            onChange={handleChange}
+          /> */}
+          <Form.Input
+
             label="Instrument"
             placholder="Instrument.."
             name="instrument"
