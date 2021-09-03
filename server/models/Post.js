@@ -20,7 +20,6 @@ const postSchema = new Schema({
     type: String,
     required: true,
   },
-  
     
  
   user_id: 

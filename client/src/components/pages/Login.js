@@ -11,7 +11,7 @@ function Login(props) {
     const [login, { loading }] = useMutation(LOGIN_USER, {
     update(_, result) {
       console.log(result)
-     props.history.push('/dashboard')
+     
     },
     variable: { ...userFormData }
 
@@ -37,12 +37,12 @@ function Login(props) {
         variables: { ...userFormData },
       });
       console.log('data!! from mutation attempt', data)
-      //console.log('err', error)
+   
       Auth.login(data.login.token);
     } catch (err) {
       console.log('WE HAVE ERRR from mutation thing', err)
      console.error(err);
-      //setShowAlert(true);
+ 
     }
 
     setUserFormData({

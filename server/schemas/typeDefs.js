@@ -11,8 +11,7 @@ const typeDefs = gql`
    _id: ID
    instrument: String
    description: String
-   genre: String
-   image: String
+   genre: String 
    title: String 
 
   }
@@ -23,15 +22,12 @@ const typeDefs = gql`
    
   }
 
-  
-
   type Auth {
     token: ID
     user: User
   }
 
   type Query {
-   
     users:[User]
     posts:[Post]
   }

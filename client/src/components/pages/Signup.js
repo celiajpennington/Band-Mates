@@ -5,14 +5,14 @@ import { ADD_USER } from '../../utils/mutations'
 import Auth from '../../utils/auth';
 import '../style/login.css';
 
-function Signup(props) {
+function Signup() {
   // set initial form state
   const [errors, setErrors] = useState({});
   const [userFormData, setUserFormData] = useState({ username: '', email: '', password: '' });
    const [addUser, { loading}] = useMutation(ADD_USER, {
     update(_, result) {
        console.log(result)
-       props.history.push('/dashboard')
+       
      },
      onError(err) {
        setErrors(err.graphQLErrors[0].extensions.exception.errors)

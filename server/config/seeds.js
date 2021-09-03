@@ -5,13 +5,12 @@ db.once('open', async () => {
   await Post.deleteMany();
   const Posts = await Post.insertMany([
     {
-     
+
       title: "Need a new Drummer",
       instrument: "Drummer",
       genre: "Alternative",
       description: "Our drummer suck, need a new one. If your name is Dave Grohl, that works",
-      image: "client/public/images/alphabet-blocks.jpg",
-      // post_id: post[0]._id,
+      
     },
     {
       
@@ -19,17 +18,15 @@ db.once('open', async () => {
       instrument: "Singer",
       genre: "Alternative",
       description: "Looking for a band to leech off of my husbands success",
-      image: "client/public/images/alphabet-blocks.jpg",
-      // post_id: post[1]._id,
+      
     },
     {
-      
+
       title: "Help!",
       instrument: "Sitar",
       genre: "Traditional Indian",
       description: "The Beatles broke up! Looking to get into Indian music and I need a sitar palyer!",
-      image: "client/public/images/alphabet-blocks.jpg",
-      // post_id: post[2]._id,
+     
     },
     
   ]);
