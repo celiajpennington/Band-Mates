@@ -2,6 +2,8 @@ import React from 'react';
 import { Jumbotron} from 'reactstrap';
 import '../style/Home.css';
 import About from '../About';
+import '../style/font/sacco-bold.ttf';
+
 
 function Home() {
   return (
