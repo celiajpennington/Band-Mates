@@ -3,6 +3,7 @@ import { useQuery } from '@apollo/client'
 import { QUERY_POSTS } from '../../utils/queries'
 import { Card, Button,Image} from 'semantic-ui-react'
 
+
 function ViewAllPosts() {
 
   const { data } = useQuery(QUERY_POSTS)

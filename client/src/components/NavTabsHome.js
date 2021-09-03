@@ -3,6 +3,7 @@ import { Menu } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import './style/NavTabsHome.css';
 
+
 function NavTabsHome() {
   console.log('NAV TABS!!!!!!!')
   const [activeItem, setActiveItem] = useState('home');
