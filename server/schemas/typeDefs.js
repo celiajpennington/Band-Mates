@@ -41,16 +41,16 @@ const typeDefs = gql`
   }
 
   type Query {
-    allPosts:[Post]
+   
     users:[User]
-    
+    posts:[Post]
   }
 
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
-    addPost(postInput: PostInput! ):Post
+    addPost(postInput: PostInput!):Post
     login(email: String!, password: String!): Auth
   }
 `;
-
+//In add Post we may need to add user type to add post mutation
 module.exports = typeDefs;

@@ -33,10 +33,10 @@ const postSchema = new Schema({
   //   ref: 'Comment',
   //   required: true
   // }],
-  post_id: 
+  user_id: 
     {
       type: Schema.Types.ObjectId,
-      ref: 'Post'
+      ref: 'User'
     }
   
   
