@@ -3,6 +3,8 @@ import { useMutation } from '@apollo/client';
 import { Form, Button } from 'semantic-ui-react'
 import { ADD_POST } from '../../utils/mutations'
 import '../style/CreatePost.css';
+
+
 function CreatePost() {
   const [formState, setFormState] = useState({
       username: '',
