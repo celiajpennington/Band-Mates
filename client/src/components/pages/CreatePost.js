@@ -45,14 +45,8 @@ function CreatePost() {
 
            <Form.Input
 
-          {/* <Form.Input
-            label="Username"
-            placholder="Username.."
-            name="username"
-            value={formState.username}
-            onChange={handleChange}
-          /> */}
-          <Form.Input
+        
+         
 
             label="Instrument"
             placholder="Instrument.."

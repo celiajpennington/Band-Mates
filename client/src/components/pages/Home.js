@@ -1,7 +1,6 @@
 import React from 'react';
 import { Jumbotron} from 'reactstrap';
 import '../style/Home.css';
-import About from '../About';
 import '../style/font/sacco-bold.ttf';
 
 
@@ -13,7 +12,7 @@ function Home() {
         
           <img style={{borderBottomStyle:"outset",margin:"0 0 -5 0",maxWidth:"100%", maxHeight:"100%"}}className="display-3" src="https://i.imgur.com/hkVYvd3.jpg"></img>
           
-       
+      
       </Jumbotron>
     {/* <img style={{background:"https://i.imgur.com/zDBO5ot.jpg",margin:"5% 25%",border:"solid #e6dcca ",maxWidth:"600px", width: "100%", maxHeight:"auto"}} className="home-img" src="https://i.imgur.com/cRCyN5v.png"  alt="BandMates logo"></img>  */}
       <h1 className="about" style={{ textShadow:"-1px 1px 2px #000" ,margin:"-5% 35% 0 35%",fontFamily:"sans-serif",color: "#fdd05a", fontSize:"10vw"}}>
