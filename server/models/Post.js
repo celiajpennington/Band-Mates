@@ -3,11 +3,7 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const postSchema = new Schema({
-  username: [
-    {
-      type: String,
-    },
-  ],
+ 
   title: {
     type: String,
     required: true,
@@ -24,9 +20,7 @@ const postSchema = new Schema({
     type: String,
     required: true,
   },
-  image: {
-    type: String,
-  },
+ 
     
   // comment: [{
   //   type: Schema.Types.ObjectId,

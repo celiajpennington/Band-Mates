@@ -22,7 +22,8 @@ function ViewAllPosts() {
             floated='right'
             size='mini'
             src='https://s3.amazonaws.com/shecodesio-production/uploads/files/000/016/522/original/download.jpeg?1630679706'
-          /> 
+          />
+          
          <Card.Header>Title: {val.title}</Card.Header>
           <Card.Description>
            Instrumrnt: {val.instrument}
@@ -37,7 +38,7 @@ function ViewAllPosts() {
         <Card.Content extra>
           <div className='ui two buttons'>
             <Button basic color='green'>
-             Save Post
+             View Single Post
             </Button>
         </div>
         </Card.Content>

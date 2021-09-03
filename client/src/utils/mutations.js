@@ -30,27 +30,16 @@ export const ADD_USER = gql`
 
 
 export const ADD_POST = gql`
-  mutation addPost($postInput: PostInput! ) {
-  addPost(postInput: $postInput)
+ mutation addPost($instrument: String!, $description:String!, $genre: String! $title: String! ) {
+  addPost(instrument: $instrument,description:$description, genre:$genre,title:$title)
        {
-
-        _id
-            username
-            email
-            
-            post{
-
-           
               _id
-             username
               instrument
               description
-                genre
-                image
-                title
+              genre
+              title
            }
-      
-          } }
+      }
   `;
 
 
